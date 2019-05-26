@@ -4,33 +4,42 @@ import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import path from 'path';
 
 export default {
-  entry: ['babel-polyfill', path.resolve(__dirname, '../../src/client/app/index.jsx')],
+  entry: [path.resolve(__dirname, '../src/app/index.js')],
   output: {
     filename: '[name].[chunkhash].bundle.js',
     chunkFilename: '[name].[chunkhash].bundle.js',
-    path: path.resolve(__dirname, '../../dist'),
+    path: path.resolve(__dirname, '../dist'),
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['.js', '.json', '.svelte'],
     modules: [path.resolve('./node_modules')],
     alias: {
-      client: path.resolve(__dirname, '../../src/client/'),
+      src: path.resolve(__dirname, '../src/'),
     },
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
+          },
+          'eslint-loader',
+        ],
+      },
+      {
+        test: /\.svelte$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'svelte-loader',
             options: {
-              plugins: ['lodash'],
+              hotReload: true,
             },
           },
           'eslint-loader',
-          'stylelint-custom-processor-loader',
         ],
       },
       {
@@ -61,17 +70,14 @@ export default {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/client/app/index.ejs',
+      template: './src/app/index.ejs',
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[hash].css',
       chunkFilename: '[hash].css',
     }),
-    new FaviconsWebpackPlugin(path.resolve(__dirname, '../../favicon.png')),
-    new LodashModuleReplacementPlugin({
-      paths: true,
-    }),
+    new FaviconsWebpackPlugin(path.resolve(__dirname, '../favicon.png')),
   ],
   optimization: {
     splitChunks: {
@@ -87,7 +93,7 @@ export default {
   devServer: {
     contentBase: path.join(__dirname, '../../dist'),
     compress: true,
-    port: 2828,
+    port: 2222,
     host: '0.0.0.0',
     historyApiFallback: true,
   },

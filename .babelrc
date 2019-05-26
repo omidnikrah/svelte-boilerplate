@@ -1,0 +1,9 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-flow"],
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread",
+    "syntax-dynamic-import",
+    "transform-object-rest-spread",
+    "transform-class-properties"
+  ]
+}
