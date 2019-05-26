@@ -2,7 +2,7 @@
 
 This project is under development...
 
-#####Technologies used
+***Technologies used***
 
 * [Webpack 4](https://github.com/webpack/webpack) 
 * [Babel 7](https://github.com/babel/babel) [ transforming JSX and ES6,ES7,ES8 ]
