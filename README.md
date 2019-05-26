@@ -1,5 +1,7 @@
 # Svelte Boilerplate
 
+![Svelte Boilerplate](https://raw.githubusercontent.com/omidnikrah/svelte-boilerplate/master/banner.png)
+
 This project is under development...
 
 #####Technologies used
