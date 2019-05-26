@@ -1,6 +1,6 @@
 # Svelte Boilerplate
 
-![Svelte Boilerplate](https://raw.githubusercontent.com/omidnikrah/svelte-boilerplate/master/banner.png)
+![Svelte Boilerplate](https://raw.githubusercontent.com/omidnikrah/svelte-boilerplate/master/banner.jpg)
 
 This project is under development...
 
