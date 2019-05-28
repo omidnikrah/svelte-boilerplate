@@ -10,3 +10,8 @@ This project is under development...
 * [Babel 7](https://github.com/babel/babel) [ transforming JSX and ES6,ES7,ES8 ]
 * [Eslint](https://github.com/eslint/eslint/) with airbnb config
 * [Webpack dev serve](https://github.com/webpack/webpack-dev-server) 
+
+***Todos***
+
+ - [ ] Flow type
+ - [ ] Routing
