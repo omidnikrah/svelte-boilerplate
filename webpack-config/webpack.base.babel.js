@@ -36,6 +36,7 @@ export default {
           {
             loader: 'svelte-loader',
             options: {
+              emitCss: true,
               hotReload: true,
             },
           },
